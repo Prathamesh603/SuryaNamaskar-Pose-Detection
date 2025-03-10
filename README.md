@@ -81,35 +81,4 @@ The **model_testing** folder contains a script to test the trained model on vide
 ✔️ Predicts poses and overlays labels on the video
 ✔️ Groups multiple frames for improved accuracy
 
-## 🛠 Setup Instructions
-Follow these steps to run the project on your local machine:
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/Prathamesh603/SuryaNamaskar-Pose-Detection.git
-cd SuryaNamaskar-Pose-Detection
-```
-
-### 2️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3️⃣ Download the Dataset
-Download the dataset from **Roboflow** and place it in the `dataset/` folder.
-
-### 4️⃣ Run Data Preprocessing
-```bash
-python data_preprocessing/data_labeling.py
-python data_preprocessing/data_organization.py
-```
-
-### 5️⃣ Train the Model
-```bash
-python model_training/train_model.py   # For base model
-python model_training/fine_tune_model.py  # For fine-tuned model
-```
-
-### 6️⃣ Test the Model on Video
-```bash
-python model
