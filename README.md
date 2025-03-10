@@ -1,13 +1,13 @@
 # SuryaNamaskar-Pose-Detection
 This project uses a fine-tuned MobileNetV2 model to detect and classify 8 different Surya Namaskar poses from a video. The dataset consists of images categorized by pose names, and the model predicts the correct pose in real time
 
-## 📌 Project Overview
-This project focuses on **Surya Namaskar (Sun Salutation) Pose Detection** using **Deep Learning (MobileNetV2)**. The system can classify different yoga poses in Surya Namaskar from a video input and predict the correct pose in real-time. The model is trained on a custom dataset containing images of eight different Surya Namaskar poses.
+## 📌 Overview
 
-## 📂 Project Structure
-The repository is structured as follows:
+Surya Namaskar (Sun Salutation) is a sequence of yoga poses performed in a flow. This project aims to develop a deep learning-based model that accurately classifies and detects various Surya Namaskar poses using image and video input. The model is built using **MobileNetV2** and fine-tuned to improve accuracy. However, the model currently experiences fluctuations in certain cases, which will require further improvements.
 
-```
+## 📁 Project Structure
+
+```plaintext
 SuryaNamaskar-Pose-Detection/
 │── dataset/                      # Data source link (organized images in respective folders)
 │── data_preprocessing/            # Scripts for preprocessing dataset
@@ -21,59 +21,88 @@ SuryaNamaskar-Pose-Detection/
 │── models/                        # Pretrained and fine-tuned models
 │   │── surya_namaskar_pose_model.h5
 │   └── fine_tuned_mobilenetv2.h5
-│── testing_results/               # Results and output images from testing
+│── testing_results/               # Results, screenshots, and accuracy graphs from testing
 │── README.md                      # Project documentation
 ```
 
 ## 📥 Dataset
-The dataset consists of images categorized into eight different Surya Namaskar poses. Each pose contains around **280–320 images**. The dataset was obtained from **Roboflow** and was further processed for training.
 
-🔗 **[Dataset Source (Roboflow)](https://universe.roboflow.com/lalitha-uruu5/surya-namaskar)**
+This project uses a **Surya Namaskar Yoga Pose Dataset** downloaded from **Roboflow**. The dataset contains images categorized into **8 different yoga poses**.
 
-### 🔹 Data Organization
-The dataset is organized into folders where each folder represents a specific yoga pose:
-```
-dataset/
-│── pranamasana/
-│── hasta_utthanasana/
-│── padahastasana/
-│── ashwa_sanchalanasana/
-│── kumbhakasana/
-│── ashtanga_namaskara/
-│── bhujangasana/
-│── adho_mukh_svanasana/
+🔗 **Dataset Link:** [Roboflow Dataset](https://roboflow.com/)
+
+The dataset has been preprocessed and organized into separate folders per pose.
+
+## 🛠 Requirements
+
+Make sure you have the following dependencies installed before running the scripts:
+
+```bash
+pip install tensorflow keras opencv-python mediapipe numpy pandas matplotlib scikit-learn
 ```
 
-## 🛠 Data Preprocessing
-The **data_preprocessing** folder contains scripts to:
-1. **Label Images**: Assign correct labels to images based on the CSV file.
-2. **Organize Images**: Move images into folders based on their corresponding yoga poses.
+## 🚀 Usage
 
-### 📜 Scripts
-- `data_labeling.py`: Creates labeled CSV file from raw dataset.
-- `data_organization.py`: Organizes images into respective pose folders.
+### 1️⃣ Data Preprocessing
 
-## 🏋️‍♂️ Model Training
-The **model_training** folder contains scripts for:
-1. **Baseline Model**: Trains a MobileNetV2 model on the dataset.
-2. **Fine-tuned Model**: Improves accuracy using additional training techniques.
+Run these scripts to prepare the dataset before training:
 
-### 📜 Scripts
-- `train_model.py`: Trains a basic MobileNetV2 model.
-- `fine_tune_model.py`: Fine-tunes MobileNetV2 for better accuracy.
+```bash
+python data_preprocessing/label_generator.py  # Generates labeled CSV
+python data_preprocessing/dataset_organizer.py  # Organizes dataset into folders
+```
 
-### 📌 Model Used: MobileNetV2
-- **Pretrained Model**: MobileNetV2 (ImageNet weights)
-- **Input Size**: 224x224
-- **Optimizer**: Adam
-- **Loss Function**: Categorical Crossentropy
-- **Epochs**: 20 (adjustable)
+### 2️⃣ Model Training
 
-## 🎥 Model Testing
-The **model_testing** folder contains a script to test the trained model on video input.
+Train the model using:
 
-### 📜 Script
-- `pose_detection.py`: Processes a video and detects Surya Namaskar poses in real-time.
+```bash
+python model_training/train_model.py  # Train MobileNetV2
+python model_training/fine_tune_model.py  # Fine-tune MobileNetV2
+```
+
+### 3️⃣ Model Testing
+
+To test the trained model on a **video input**:
+
+```bash
+python model_testing/test_pose_from_video.py
+```
+
+This will process the video and predict the yoga poses frame by frame.
+
+## 🔬 Testing Results
+
+The **testing\_results/** folder contains:
+
+- Sample output images with pose labels
+- Screenshots of pose detection from video
+- Accuracy graphs comparing basic and fine-tuned models
+
+## 📌 Models
+
+Trained models are stored in the **models/** folder:
+
+- `surya_namaskar_pose_model.h5` (Basic MobileNetV2 model)
+- `fine_tuned_mobilenetv2.h5` (Fine-tuned version for better accuracy)
+
+## 🔄 Improvements for Better Accuracy
+
+The current model exhibits some fluctuations in predictions. Here are potential improvements:
+
+- **Data Augmentation**: Introduce rotation, flipping, and brightness adjustments to improve model robustness.
+- **More Training Data**: Expanding the dataset with diverse examples can improve generalization.
+- **Better Feature Extraction**: Using advanced architectures like EfficientNet or Vision Transformers (ViTs).
+
+## 📌 Contribution
+
+Feel free to contribute to this project! If you find any improvements, submit a pull request. 🚀
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
+
+
 
 ### 🔹 Features
 ✔️ Loads the trained MobileNetV2 model
