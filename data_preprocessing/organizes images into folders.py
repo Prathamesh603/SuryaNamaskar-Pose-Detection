@@ -5,9 +5,9 @@ import pandas as pd
 # -------------------------------
 # 1. Define Paths (Update These Paths!)
 # -------------------------------
-image_folder = r"D:\ET23BTCO123\suraya namskar pose detection\data for CNN\dataset\label"  # Source image folder
-csv_path = r"D:\ET23BTCO123\suraya namskar pose detection\labeled_data.csv"  # CSV file with image names and labels
-dataset_folder = r"D:\ET23BTCO123\suraya namskar pose detection\data for CNN\dataset"  # Destination folder for organized images
+image_folder = r"dataset\label"  # Source image folder
+csv_path = r"labeled_data.csv"  # CSV file with image names and labels
+dataset_folder = r"dataset"  # Destination folder for organized images
 
 # -------------------------------
 # 2. Load CSV and Prepare Data
