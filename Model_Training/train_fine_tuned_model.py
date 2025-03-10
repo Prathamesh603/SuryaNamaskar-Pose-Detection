@@ -7,7 +7,7 @@ from tensorflow.keras.optimizers import Adam
 import matplotlib.pyplot as plt
 
 # 1. Define Dataset Path (Make Sure Your Dataset is Structured Correctly)
-dataset_path = "D:\\ET23BTCO123\\suraya namskar pose detection\\data for CNN\\dataset"  # Ensure 'dataset/' contains 8 pose folders with images
+dataset_path = "data for CNN\\dataset"  # Ensure 'dataset/' contains 8 pose folders with images
 
 #2. Load and Augment Data
 data_gen = ImageDataGenerator(
