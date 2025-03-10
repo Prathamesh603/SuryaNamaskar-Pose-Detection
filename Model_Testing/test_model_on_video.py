@@ -6,7 +6,7 @@ import tensorflow as tf
 # -------------------------------
 # 1. Load the Trained Model
 # -------------------------------
-model_path = "D:\\ET23BTCO123\\suraya namskar pose detection\\data for CNN\\fine_tuned_mobilenetv2.h5"
+model_path = "fine_tuned_mobilenetv2.h5"
 model = tf.keras.models.load_model(model_path)
 
 # Define the class names (ensure these match the order used during training)
@@ -31,7 +31,7 @@ mp_drawing = mp.solutions.drawing_utils
 # -------------------------------
 # 3. Setup OpenCV for Video File Capture
 # -------------------------------
-video_path = "C:\\Users\\prath\\Downloads\\VID-20250309-WA0014.mp4"  # Update with your video file path
+video_path = "Downloads\\VID-20250309-WA0014.mp4"  # Update with your video file path
 cap = cv2.VideoCapture(video_path)
 
 # -------------------------------
