@@ -2,8 +2,8 @@ import os
 import pandas as pd
 
 # Paths
-image_folder = "D:\\ET23BTCO123\\suraya namskar pose detection\\dataset\\label"  # Update with your actual image folder path
-csv_path = "C:\\Users\\prath\\Downloads\\surya namaskar.v4i.multiclass\\train\\_classes.csv"  # Update with the correct CSV path
+image_folder = "dataset"  # Update with your actual image folder path
+csv_path = "classes.csv"  # Update with the correct CSV path
 
 # Load CSV
 df = pd.read_csv(csv_path)
