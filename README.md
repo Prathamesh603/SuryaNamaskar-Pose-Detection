@@ -3,7 +3,7 @@ This project uses a fine-tuned MobileNetV2 model to detect and classify 8 differ
 
 ## 📌 Overview
 
-Surya Namaskar (Sun Salutation) is a sequence of yoga poses performed in a flow. This project aims to develop a deep learning-based model that accurately classifies and detects various Surya Namaskar poses using image and video input. The model is built using **MobileNetV2** and fine-tuned to improve accuracy. However, the model currently experiences fluctuations in certain cases, which will require further improvements.
+Surya Namaskar (Sun Salutation) is a sequence of yoga poses performed in a flow. This project aims to develop a deep learning-based model that accurately classifies and detects various Surya Namaskar poses using image and video and real Time input Using Camera. The model is built using **MobileNetV2** and fine-tuned to improve accuracy. However, the model currently experiences fluctuations in certain cases, which will require further improvements.
 
 ## 📁 Project Structure
 
