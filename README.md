@@ -9,13 +9,20 @@ The repository is structured as follows:
 
 ```
 SuryaNamaskar-Pose-Detection/
-│── dataset/                # Contains dataset link and information
-│── data_preprocessing/     # Contains scripts for data labeling & organizing
-│── model_training/         # Model training scripts (base & fine-tuned model)
-│── model_testing/          # Script for testing pose detection on videos
-│── models/                 # Trained models (.h5 files)
-|--Testing_Results/          # Testing Results
-│── README.md               # Project documentation
+│── dataset/                      # Data source link (organized images in respective folders)
+│── data_preprocessing/            # Scripts for preprocessing dataset
+│   │── label_generator.py         # Generates CSV with labels from image folders
+│   └── dataset_organizer.py       # Moves images into respective class folders
+│── model_training/                # Model training scripts
+│   │── train_model.py             # Standard training of MobileNetV2
+│   └── fine_tune_model.py         # Fine-tuning of MobileNetV2
+│── model_testing/                 # Scripts for testing the trained model
+│   └── test_pose_from_video.py    # Detects poses from video input
+│── models/                        # Pretrained and fine-tuned models
+│   │── surya_namaskar_pose_model.h5
+│   └── fine_tuned_mobilenetv2.h5
+│── testing_results/               # Results and output images from testing
+│── README.md                      # Project documentation
 ```
 
 ## 📥 Dataset
