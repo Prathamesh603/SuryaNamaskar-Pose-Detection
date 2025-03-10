@@ -14,7 +14,7 @@ IMG_SIZE = (224, 224)   # Input image size
 BATCH_SIZE = 32         # Number of images per batch
 EPOCHS = 15             # Number of training epochs
 NUM_CLASSES = 8         # Number of Surya Namaskar poses
-DATASET_PATH = r"D:\ET23BTCO123\suraya namskar pose detection\data for CNN\dataset"  # Update this path
+DATASET_PATH = r"data for CNN\dataset"  # Update this path
 
 # -------------------------------
 # Data Preprocessing & Augmentation
